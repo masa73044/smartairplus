@@ -1,11 +1,17 @@
 import css from "./Layout.module.css";
 import moment from "moment/moment";
 import { BiSearch } from "react-icons/bi";
+import Sidebar from "../Sidebar/Sidebar";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 
 const Layout = () => {
+  const { pathname } = useLocation();
   return (
     <div className={css.container}>
-      <div>Sidebar</div>
+      <Sidebar />
+
+      {/* {default} */}
+      {pathname === "/" && <Navigate to="/dashboard" />}
       <div className={css.dashboard}>
         <div className={css.topBaseGradients}>
           <div className="gradient-red"></div>
@@ -22,10 +28,13 @@ const Layout = () => {
           <div className={css.profile}>
             <img src="./profile.png" alt="person image" />
             <div className={css.details}>
-              <span>Denis Steven</span>
-              <span>denissteven@gmail.com</span>
+              <span>Lebron James</span>
+              <span>Lebron@gmail.com</span>
             </div>
           </div>
+        </div>
+        <div className={css.content}>
+          <Outlet />
         </div>
       </div>
     </div>
