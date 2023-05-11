@@ -61,3 +61,10 @@
   font-size: 0.8rem;
   color: var(--green);
 }
+.orderChart {
+  width: 100%;
+}
+
+.orderChart > :nth-child(1) {
+  text-align: center;
+}
