@@ -4,8 +4,36 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import "./Calendar.css";
+import useCalendar from "../../store/Calendar";
+import { createEventId } from "../../data";
 
 const Calendar = () => {
+  const { currentEvents, setCurrentEvents } = useCalendar();
+  const handleEvents = async (events) => {
+    await Promise.resolve(setCurrentEvents(events));
+  };
+
+  const handleDateSelect = (selectInfo) => {
+    let title = prompt("Please enter title");
+    let calendarApi = selectInfo.view.calendar;
+    calendarApi.unselect();
+
+    if (title) {
+      calendarApi.addEvent({
+        id: createEventId(),
+        title,
+        start: selectInfo.start,
+        end: selectInfo.end,
+        allDay: selectInfo.allDay,
+      });
+    }
+  };
+
+  const handleEventClick = (clickInfo) => {
+    if (confirm("are you sure delete")) {
+      clickInfo.event.remove();
+    }
+  };
   return (
     <div className="calendar-container">
       <div>
@@ -25,7 +53,10 @@ const Calendar = () => {
           dayMaxEvents={true}
           weekends={true}
           nowIndicator={true}
-          initialEvents={[]}
+          initialEvents={currentEvents}
+          eventsSet={handleEvents}
+          select={handleDateSelect}
+          eventClick={handleEventClick}
         />
       </div>
     </div>
