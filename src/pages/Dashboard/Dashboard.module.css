@@ -32,7 +32,9 @@
 
 .durationButton > select {
   border: none;
-  background: var(--orange-gradient);
+  /* background: var(--orange-gradient); */
+  background: rgba(90, 178, 121);
+
   padding: 10px;
   font-weight: 500;
   border-radius: 10px;

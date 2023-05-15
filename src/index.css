@@ -30,6 +30,8 @@ body {
 
 .theme-container {
   background: rgba(0, 0, 0, 0.59);
+  /* background: rgba(90, 178, 121, 0.59); */
+
   border-radius: 20px;
   padding: 2rem;
 }
@@ -38,21 +40,26 @@ body {
   position: absolute;
   width: 200px;
   height: 200px;
-  background: #ff5d5d;
+  /* background: #ff5d5d; */
+  background: rgba(90, 178, 121);
   filter: blur(90px);
 }
 .gradient-orange {
   position: absolute;
   width: 200px;
   height: 200px;
-  background: var(--orange);
+  /* background: var(--orange); */
+  background: rgba(90, 178, 121);
+
   filter: blur(90px);
 }
 .gradient-blue {
   position: absolute;
   width: 200px;
   height: 200px;
-  background: #5dc9ff;
+  /* background: #5dc9ff; */
+  background: rgba(90, 178, 121);
+
   filter: blur(90px);
 }
 
