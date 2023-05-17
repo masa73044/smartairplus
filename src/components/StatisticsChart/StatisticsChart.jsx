@@ -11,6 +11,10 @@ const StatisticsChart = () => {
       },
     },
 
+    legend: {
+      data: ["PM2.5", "PM10"],
+    },
+
     tooltip: {
       trigger: "axis",
       axisPointer: {
@@ -43,8 +47,10 @@ const StatisticsChart = () => {
     ],
     series: [
       {
+        name: "PM2.5",
         type: "line",
-        smooth: true,
+        color: "red",
+        smooth: false,
         lineStyle: {
           color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {
@@ -54,7 +60,9 @@ const StatisticsChart = () => {
             },
             {
               offset: 1,
-              color: "rgb(181,221,113)",
+              // color: "rgb(181,221,113)",
+              color: "rgb(229,104,100)",
+
               //   color: "green",
             },
           ]),
@@ -67,7 +75,56 @@ const StatisticsChart = () => {
               offset: 0,
               //   color: "#FE4C00",
 
-              color: "rgb(229,104,100)",
+              // color: "rgb(229,104,100)",
+              color: "red",
+            },
+            {
+              offset: 1,
+              //   color: "rgb(181,221,113)",
+              color: "rgba(255,144,70,0.1)",
+
+              //   color: "green",
+            },
+          ]),
+        },
+        emphasis: {
+          focus: "series",
+        },
+        showSymbol: false,
+        data: [30, 31, 30, 20, 11, 32, 18],
+      },
+      {
+        name: "PM10",
+        type: "line",
+        color: "orange",
+        smooth: false,
+        lineStyle: {
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {
+              offset: 0,
+              // color: "rgb(229,104,100)",
+              //   color: "red",
+              color: "orange",
+            },
+            {
+              offset: 1,
+              // color: "rgb(181,221,113)",
+              color: "orange",
+
+              //   color: "green",
+            },
+          ]),
+          width: 4,
+        },
+        areaStyle: {
+          opacity: 0.5,
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 0.8, [
+            {
+              offset: 0,
+              //   color: "#FE4C00",
+
+              // color: "rgb(229,104,100)",
+              color: "orange",
               //   color: "red",
             },
             {
@@ -83,10 +140,11 @@ const StatisticsChart = () => {
           focus: "series",
         },
         showSymbol: false,
-        data: [28000, 19000, 32000, 18000, 41000, 30000, 26000],
+        data: [30, 32, 33, 34, 35, 35, 35],
       },
     ],
   };
+
   return <ReactECharts option={option} />;
 };
 
