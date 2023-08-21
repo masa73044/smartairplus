@@ -1,20 +1,20 @@
 import css from "./Statistics.module.css";
-import { DiRasberryPi } from "react-icons/di";
+import { FaWind } from "react-icons/fa";
 import { groupNumber } from "../../data";
 import StatisticsChart from "../StatisticsChart/StatisticsChart";
 
 const Statistics = () => {
   return (
     <div className={`${css.container} theme-container`}>
-      <span className={css.title}>SDS011 Local Sensor</span>
+      <span className={css.title}>Local Sensor</span>
       <div className={`${css.cards} grey-container`}>
         <div>
           <div className={css.arrowIcon}>
-            <DiRasberryPi />
+            <FaWind />
           </div>
           <div className={css.card}>
             <span>Running on </span>
-            <span> Raspberry Pi 4</span>
+            <span> SDS011 Sensor</span>
           </div>
         </div>
         {/* <div className={css.card}>
