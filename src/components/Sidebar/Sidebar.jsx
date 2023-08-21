@@ -17,12 +17,12 @@ const Sidebar = () => {
         <NavLink to="calendar" className={css.item} title="Calendar">
           <AiFillCalendar size={30} />
         </NavLink>
-        <NavLink to="aqMap" className={css.item} title="AQ Map">
+        {/* <NavLink to="aqMap" className={css.item} title="AQ Map">
           <GiEarthAmerica size={30} />
         </NavLink>
         <NavLink to="users" className={css.item} title="Users">
           <AiOutlineTable size={30} />
-        </NavLink>
+        </NavLink> */}
       </div>
     </div>
   );
